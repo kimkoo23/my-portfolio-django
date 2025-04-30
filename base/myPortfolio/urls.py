@@ -19,4 +19,5 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('portfolio_app.urls')), # 앱URL 연결
 ]
