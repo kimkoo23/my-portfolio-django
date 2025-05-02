@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block title %}송세용 포트폴리오{% endblock %}
+
+{% block content %}
+
+<!-- About Section -->
+<section class="resume-section" id="about">
+  <div class="resume-section-content text-center">
+    <h1 class="mb-0">송세용
+      <span class="text-primary">Song Seyong</span>
+    </h1>
+    <div class="subheading mb-3">
+      백엔드 개발자 · Java · Spring · Django · AWS  
+      <br>
+      <a href="mailto:sedreon@gmail.com">sedreon@gmail.com</a>
+    </div>
+    <p class="lead mb-5">
+      공공기관 시스템 개발 및 유지보수를 통해 실전 경험을 쌓은 개발자입니다. 성능 개선, 보안 구현, 사용자 중심 개발에 강점을 갖고 있으며, 자기주도적인 프로젝트 수행 경험을 바탕으로 끊임없이 성장 중입니다.
+    </p>
+    <div class="social-icons">
+      <a class="social-icon" href="https://github.com/kimkoo23" target="_blank"><i class="fab fa-github"></i></a>
+      <a class="social-icon" href="mailto:sedreon@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+</section>
+
+<hr class="m-0" />
+
+<!-- Experience Section -->
+<section class="resume-section" id="experience">
+  <div class="resume-section-content">
+    <h2 class="mb-5">Experience</h2>
+
+    <div class="d-flex flex-column flex-md-row justify-content-between mb-4">
+      <div>
+        <h3 class="mb-0">백엔드 개발자</h3>
+        <div class="subheading mb-2">(주) 유큐브</div>
+        <p>청원24 운영 및 유지보수, 서울시 공무원 모바일 업무 시스템 고도화 등 다양한 공공 프로젝트 개발 경험.</p>
+        <ul>
+          <li>SQL 튜닝을 통해 DB 쿼리 속도 60초 → 5초 이하로 개선</li>
+          <li>SSO, QR 로그인 기능 구현</li>
+          <li>Spring, TiberoDB, JSP 등 기술 스택 활용</li>
+        </ul>
+      </div>
+      <div class="text-md-end">
+        <span class="text-primary">2022.02 – 현재</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="m-0" />
+
+<!-- Skills Section -->
+<section class="resume-section" id="skills">
+  <div class="resume-section-content">
+    <h2 class="mb-5">Skills</h2>
+
+    <div class="subheading mb-3">Backend</div>
+    <ul class="list-inline dev-icons">
+      <li class="list-inline-item"><i class="fab fa-java"></i></li>
+      <li class="list-inline-item"><i class="fab fa-python"></i></li>
+      <li class="list-inline-item"><i class="fas fa-database"></i></li>
+    </ul>
+    <p>Java, Spring Framework, Spring Boot, Django, SQL, Spring Batch</p>
+
+    <div class="subheading mb-3 mt-4">Frontend & Tools</div>
+    <ul class="list-inline dev-icons">
+      <li class="list-inline-item"><i class="fab fa-js"></i></li>
+      <li class="list-inline-item"><i class="fab fa-html5"></i></li>
+      <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
+      <li class="list-inline-item"><i class="fab fa-git-alt"></i></li>
+    </ul>
+    <p>JSP, jQuery, HTML, CSS, Git, Bootstrap, React (기초), OZ Report</p>
+  </div>
+</section>
+
+<hr class="m-0" />
+
+<!-- Projects Section -->
+<section class="resume-section" id="projects">
+  <div class="resume-section-content">
+    <h2 class="mb-5">Projects</h2>
+    <div>
+      <h4>청원24 운영 시스템</h4>
+      <p>서울시 온라인 청원 시스템 유지보수 및 기능 개선</p>
+      <ul>
+        <li>피벗 형태 설문 엑셀 다운로드 기능 개발</li>
+        <li>DB 성능 개선 및 쿼리 최적화</li>
+        <li>JSTree로 청원 보관함 UI 구성</li>
+      </ul>
+
+      <h4 class="mt-4">공무원 모바일 업무 시스템</h4>
+      <p>1인 개발자로 기능 구현 90% 이상 완료</p>
+      <ul>
+        <li>고객사 요구사항 직접 정리 및 구현</li>
+        <li>모바일 UI/UX 개선 및 페이지 구조 설계</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="m-0" />
+
+<!-- Contact Section -->
+<section class="resume-section" id="contact">
+  <div class="resume-section-content">
+    <h2 class="mb-5">Contact</h2>
+    <p>
+      포트폴리오를 봐주셔서 감사합니다.  
+      이메일 또는 GitHub를 통해 언제든지 연락 주시면 빠르게 답변드리겠습니다.
+    </p>
+    <ul class="list-unstyled">
+      <li><strong>Email:</strong> <a href="mailto:sedreon@gmail.com">sedreon@gmail.com</a></li>
+      <li><strong>GitHub:</strong> <a href="https://github.com/kimkoo23" target="_blank">github.com/kimkoo23</a></li>
+    </ul>
+  </div>
+</section>
+
+{% endblock %}

@@ -7,3 +7,11 @@ def home(request):
 def career(request):
     return render(request, 'career.html')
 
+def skills(request):
+    return render(request, 'skills.html')
+
+def projects(request):
+    return render(request, 'projects.html')
+
+def contact(request):
+    return render(request, 'contact.html')
