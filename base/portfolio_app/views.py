@@ -15,3 +15,6 @@ def projects(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+def aniPortfolio(request):
+    return render(request, 'aniPortfolio.html')

@@ -10933,8 +10933,13 @@ p.lead {
   font-size: 1.5rem;
   margin-right: 1.5rem;
 }
+.social-icons .social-outline {
+  display: inherit;
+  padding : 12px;
+}
+
 .social-icons .social-icon:last-child {
-  margin-right: 0;
+  margin-right: 10px;
 }
 .social-icons .social-icon:hover {
   background-color: #bd5d38;
