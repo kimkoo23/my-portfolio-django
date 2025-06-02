@@ -6,12 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>aniPortfolio</title>
 </head>
-<body >
+<body style="margin:0; background-image: url('{% static 'assets/img/background.png' %}'); background-size: cover;">
   <script src="https://code.createjs.com/1.0.0/easeljs.min.js"></script>
   <script src="https://code.createjs.com/1.0.0/tweenjs.min.js"></script>
   <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
   <script src="https://code.createjs.com/1.0.0/preloadjs.min.js"></script>
   <script>
+    const backImg = "{% static 'assets/img/background.png' %}";
     const walkImg = "{% static 'assets/img/walk.png' %}";
   </script>
   <script src="{% static 'js/common.js' %}"></script>
