@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 캔버스 사이즈를 전체 창으로
   function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth * 0.98;
+    canvas.height = window.innerHeight * 0.97;
   }
 
   resizeCanvas();
@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const spriteData = {
     images: [walkImg],  // Django 템플릿에서 전달된 static 경로
     frames: {
-      width: 500,
-      height: 310,
+      width: 355,
+      height: 225,
       count: 3
     },
     animations: {
@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const spriteSheet = new createjs.SpriteSheet(spriteData);
-  const character = new createjs.Sprite(spriteSheet, "idle");
-//  const background = new createjs.Bitmap(backImg);
+  const character = new createjs.Sprite(spriteSheet, "idle"); // 캐릭터
+  const background = new createjs.Bitmap(backImg); //배경화면
 
   // 중앙 정렬
   character.regX = 256;
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   character.scaleX = 0.5;
   character.scaleY = 0.5;
 
-//  stage.addChild(background);
+  stage.addChild(background);
   stage.addChild(character);
 
   createjs.Ticker.framerate = 30;
