@@ -32,25 +32,46 @@ document.addEventListener("DOMContentLoaded", () => {
   const spriteSheet = new createjs.SpriteSheet(spriteData);
   const character = new createjs.Sprite(spriteSheet, "idle"); // 캐릭터
   const background = new createjs.Bitmap(backImg); //배경화면
+  const cloud1 = new createjs.Bitmap(cloud1Img); //구름1
+  const cloud2 = new createjs.Bitmap(cloud2Img); //구름2
 
-  // 중앙 정렬
+  // 캐릭터 정렬
   character.regX = 256;
   character.regY = 158;
   character.x = canvas.width / 2;
-  character.y = canvas.height / 2;
+  character.y = canvas.height - (canvas.height / 4);
+  // 구름 정렬
+  cloud1.x = 50;
+  cloud1.y = 0;
+  cloud2.x = 0;
+  cloud2.y = 150;
 
   // 크기 조절 
   character.scaleX = 0.5;
   character.scaleY = 0.5;
+  cloud1.scaleX = 0.5;
+  cloud1.scaleY = 0.5;
+  cloud2.scaleX = 0.4;
+  cloud2.scaleY = 0.4;
 
   stage.addChild(background);
   stage.addChild(character);
+  stage.addChild(cloud1);
+  stage.addChild(cloud2);
 
   createjs.Ticker.framerate = 30;
   createjs.Ticker.addEventListener("tick", () => {
     moveCharacter();     // 입력 반영
     stage.update();      // 화면 그리기
   });
+
+  createjs.Tween.get(cloud1, { loop: true })
+    .to({ x: 700 }, 20000)
+    .to({ x: 0 }, 20000);
+
+  createjs.Tween.get(cloud2, { loop: true })
+    .to({ x: 700 }, 19000)
+    .to({ x: 0 }, 19000);
 
   function moveCharacter() {
     if (!direction) return;
@@ -73,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // 화면 중앙으로 고정
-    character.x =  canvas.width / 2;
+    character.x = canvas.width / 2;
   }
 
   function startWalking(direction) {
@@ -87,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
       character.scaleX = 0.5;
     } else if (direction === "left") {
       character.scaleX = -0.5;
-      }
+    }
   }
 
   function stopWalking() {
@@ -96,11 +117,11 @@ document.addEventListener("DOMContentLoaded", () => {
     moving = false;
   }
 
-  canvas.addEventListener("mousedown", startWalking);
-  canvas.addEventListener("mouseup", stopWalking);
+  canvas.addEventListener("mousedown", startWalking); //  마우스 입력 시
+  canvas.addEventListener("mouseup", stopWalking); // 마우스 놓을 시
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight") {
+    if (e.key === "ArrowRight") { //오른쪽 방향
       direction = "right";
     } else if (e.key === "ArrowLeft") {
       direction = "left";
@@ -109,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.addEventListener("keyup", (e) => {
     if ((e.key === "ArrowRight" && direction === "right") ||
-        (e.key === "ArrowLeft" && direction === "left")) {
+      (e.key === "ArrowLeft" && direction === "left")) {
       direction = null;
       character.gotoAndStop("idle");
       moving = false;
